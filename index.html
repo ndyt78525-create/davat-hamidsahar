@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fffdf8">
+<title>دعوت‌نامه عروسی حمید و سحر</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #b18a42;
+  --gold-light: #ead7a3;
+  --ink: #554324;
+  --paper: #fffdf8;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Vazirmatn', sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 50% 0%, #fff 0%, transparent 55%),
+    linear-gradient(145deg, #f8f1df, #fffefa 45%, #f5ead1);
+  overflow-x: hidden;
+}
+
+button { font: inherit; }
+
+#particles {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.intro {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 18px;
+  position: relative;
+  perspective: 1200px;
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: #e4c47a;
+  filter: blur(100px);
+  opacity: .25;
+  animation: glow 5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { transform: scale(.8); opacity: .15; }
+  to { transform: scale(1.3); opacity: .4; }
+}
+
+.envelope-scene {
+  width: min(100%, 410px);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: arrive 1.3s cubic-bezier(.2,.8,.2,1) both;
+}
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(45px) scale(.94); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  margin-bottom: 13px;
+}
+
+.intro h1 {
+  font-family: 'Amiri', serif;
+  font-weight: 400;
+  font-size: clamp(30px, 8vw, 43px);
+  margin: 0 0 8px;
+  color: #96702d;
+}
+
+.intro p {
+  font-size: 13px;
+  line-height: 2.2;
+  color: #887858;
+  margin: 0 0 35px;
+}
+
+.envelope {
+  position: relative;
+  width: min(100%, 350px);
+  height: 225px;
+  margin: 0 auto 30px;
+  filter: drop-shadow(0 22px 25px #997b4022);
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #f1e1b9, #fffdf6 48%, #e8d5a7);
+  border: 1px solid #d4b66f;
+  border-radius: 4px;
+}
+
+.letter-preview {
+  position: absolute;
+  width: 85%;
+  height: 91%;
+  left: 7.5%;
+  bottom: 0;
+  background: #fffefa;
+  border: 1px solid #e3cf9c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition: transform 1.2s .25s cubic-bezier(.2,.8,.2,1);
+}
+
+.letter-preview span:first-child {
+  color: var(--gold);
+  font-family: 'Amiri', serif;
+  font-size: 28px;
+}
+
+.letter-preview small {
+  color: #9b855b;
+  font-size: 10px;
+}
+
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(155deg, #fffdf5, #e8d5a6);
+  clip-path: polygon(0 0, 100% 0, 50% 61%);
+  transform-origin: top center;
+  transition: transform .9s ease, opacity .5s .45s;
+  z-index: 3;
+  border-top: 1px solid #c8a75f;
+}
+
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(145deg, transparent 49.5%, #dfc589 50%, #fff7df 50.7%, transparent 51%),
+    linear-gradient(215deg, transparent 49.5%, #dfc589 50%, #fff7df 50.7%, transparent 51%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.seal {
+  position: absolute;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  width: 59px;
+  height: 59px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: 'Amiri', serif;
+  font-size: 27px;
+  color: #fff8e7;
+  background: radial-gradient(circle at 30% 25%, #e3ca87, #a57c32 75%);
+  border: 2px solid #f7e7b7;
+  box-shadow: 0 0 0 4px #c5a45c33, 0 5px 15px #99702b33;
+  z-index: 5;
+  transition: opacity .3s, transform .5s;
+}
+
+.open-button {
+  cursor: pointer;
+  padding: 14px 30px;
+  color: #fffdf5;
+  border: 1px solid #d9bd7a;
+  border-radius: 3px;
+  background: linear-gradient(115deg, #99712f, #d6b66c, #a47b36);
+  box-shadow: 0 7px 25px #ac8a4633;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.open-button:active { transform: scale(.97); }
+
+.open-button:hover {
+  box-shadow: 0 10px 35px #ac8a4655;
+}
+
+.hint {
+  font-size: 10px;
+  margin-top: 18px;
+  color: #a18c65;
+  letter-spacing: 1px;
+}
+
+.envelope-scene.opened .envelope-flap {
+  transform: rotateX(180deg);
+  opacity: 0;
+}
+
+.envelope-scene.opened .seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.4);
+}
+
+.envelope-scene.opened .letter-preview {
+  transform: translateY(-100px);
+}
+
+.envelope-scene.opened .open-button {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+
+.invitation {
+  position: relative;
+  width: min(100%, 500px);
+  margin: 0 auto 60px;
+  padding: 0 17px;
+  opacity: 0;
+  transform: translateY(35px) scale(.97);
+  transition: opacity 1.1s, transform 1.1s;
+  pointer-events: none;
+}
+
+.invitation.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  padding: 48px 24px 35px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 20%, #fff 0%, transparent 65%),
+    linear-gradient(145deg, #fffefb, #fff9ea);
+  border: 1px solid #d5b46c;
+  box-shadow: 0 25px 80px #80632b20, inset 0 0 0 6px #fffdf5,
+              inset 0 0 0 7px #e6d2a0;
+}
+
+.card::before,
+.card::after {
+  content: "✧";
+  position: absolute;
+  color: #c9a45b;
+  font-size: 42px;
+  opacity: .65;
+}
+
+.card::before { top: 18px; right: 19px; }
+.card::after { bottom: 16px; left: 19px; }
+
+.ornament {
+  color: var(--gold);
+  font-size: 23px;
+  letter-spacing: 8px;
+  margin-bottom: 16px;
+}
+
+.card-kicker {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #a08347;
+}
+
+.card h2 {
+  font-family: 'Amiri', serif;
+  font-size: clamp(37px, 10vw, 54px);
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 15px 0 0;
+  color: #b18a42;
+  text-shadow: 0 2px 1px #e8d7a4;
+}
+
+.heart {
+  display: block;
+  font-size: 23px;
+  color: #c7a45d;
+  margin: -1px 0 12px;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  8% { transform: scale(1.18); }
+  16% { transform: scale(1); }
+  24% { transform: scale(1.12); }
+  32% { transform: scale(1); }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  color: #c7a45d;
+}
+
+.divider::before, .divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, #d3b56d);
+}
+
+.divider::after {
+  background: linear-gradient(90deg, #d3b56d, transparent);
+}
+
+.poem {
+  font-family: 'Amiri', serif;
+  font-size: 18px;
+  line-height: 2.5;
+  color: #75603c;
+  margin: 20px 0;
+}
+
+.message {
+  font-size: 13px;
+  line-height: 2.5;
+  color: #76664a;
+  margin: 25px 0;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 25px 0;
+}
+
+.detail {
+  padding: 13px 3px;
+  border-left: 1px solid #e7d8b6;
+}
+
+.detail:last-child { border-left: 0; }
+
+.detail .symbol {
+  display: block;
+  font-size: 22px;
+  color: #b18a42;
+  margin-bottom: 9px;
+}
+
+.detail b {
+  display: block;
+  font-size: 11px;
+  color: #a18449;
+  margin-bottom: 8px;
+}
+
+.detail span:last-child {
+  font-size: 10px;
+  line-height: 2;
+  color: #79694d;
+  overflow-wrap: anywhere;
+}
+
+.family {
+  font-size: 12px;
+  line-height: 2.5;
+  color: #8e774d;
+  margin-top: 25px;
+}
+
+.signature {
+  font-family: 'Amiri', serif;
+  font-size: 25px;
+  color: #ac843b;
+  margin-top: 12px;
+}
+
+.footer-note {
+  font-size: 10px;
+  color: #a18c65;
+  margin-top: 22px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.action-button {
+  padding: 11px 18px;
+  border: 1px solid #c9a660;
+  background: #fffdf7;
+  color: #8c6b31;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.action-button:hover {
+  background: #f7eed9;
+}
+
+.hidden { display: none; }
+
+@media (max-width: 380px) {
+  .card { padding: 43px 17px 30px; }
+  .details { gap: 2px; }
+  .detail b { font-size: 10px; }
+  .detail span:last-child { font-size: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<section class="intro" id="intro">
+  <div class="envelope-scene" id="envelopeScene">
+
+    <div class="eyebrow">A CELEBRATION OF LOVE</div>
+    <h1>دعوتی از جنس عشق</h1>
+    <p>برای آغاز قصه‌ای که قرار است تا همیشه ادامه داشته باشد…</p>
+
+    <div class="envelope">
+      <div class="envelope-back"></div>
+
+      <div class="letter-preview">
+        <span>حمید ♡ سحر</span>
+        <small>یک قصه، دو قلب، یک زندگی</small>
+        <small>با مهر دعوتید</small>
+      </div>
+
+      <div class="envelope-flap"></div>
+      <div class="envelope-front"></div>
+      <div class="seal">ح♡س</div>
+    </div>
+
+    <button class="open-button" id="openButton">
+      ✧  گشودن دعوت‌نامه  ✧
+    </button>
+
+    <div class="hint">با عشق، برای عزیزترین آدم‌های زندگی‌مان</div>
+  </div>
+</section>
+
+<section class="invitation" id="invitation">
+  <div class="card">
+
+    <div class="ornament">❧ ✧ ❧</div>
+    <div class="card-kicker">به نام عشق و آغاز یک زندگی</div>
+
+    <h2>حمید <span style="font-size:.55em">♥</span> سحر</h2>
+
+    <span class="heart">♡</span>
+
+    <div class="divider">✧</div>
+
+    <div class="poem">
+      دو قلب و یک رؤیا، دو دست در دست هم<br>
+      آغاز یک زندگی، با عشق و با امید<br>
+      چه زیباست لحظه‌ای که در کنار هم<br>
+      بسازیم قصه‌ای که انتهایش ناپدید
+    </div>
+
+    <p class="message">
+      خانواده و عزیزان مهربانمان،<br>
+      با قلبی سرشار از عشق و شادی،<br>
+      از شما دعوت می‌کنیم تا در جشن پیوند و آغاز زندگی مشترکمان<br>
+      در کنارمان باشید و شادی این روز را با ما قسمت کنید.<br>
+      حضور گرم شما، زیباترین هدیه‌ی ماست.
+    </p>
+
+    <div class="divider">❦</div>
+
+    <div class="details">
+      <div class="detail">
+        <span class="symbol">♧</span>
+        <b>مکان جشن</b>
+        <span id="venue">نام تالار را وارد کنید</span>
+      </div>
+
+      <div class="detail">
+        <span class="symbol">◷</span>
+        <b>زمان</b>
+        <span id="eventTime">ساعت برگزاری</span>
+      </div>
+
+      <div class="detail">
+        <span class="symbol">♧</span>
+        <b>تاریخ</b>
+        <span id="eventDate">تاریخ عروسی</span>
+      </div>
+    </div>
+
+    <div class="divider">✧</div>
+
+    <div class="family">
+      به امید دیدار شما در زیباترین شب زندگی‌مان<br>
+      با عشق و احترام، منتظر قدم‌های پرمهرتان هستیم.
+    </div>
+
+    <div class="signature">حمید و سحر 🤍</div>
+
+    <div class="footer-note">
+      یک شب، هزار خاطره، و عشقی برای تمام عمر
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <button class="action-button" id="shareButton">↗ اشتراک‌گذاری دعوت‌نامه</button>
+    <button class="action-button" id="topButton">↑ بازگشت به ابتدا</button>
+  </div>
+</section>
+
+<script>
+const scene = document.getElementById('envelopeScene');
+const openButton = document.getElementById('openButton');
+const invitation = document.getElementById('invitation');
+
+let hasOpened = false;
+
+openButton.addEventListener('click', () => {
+  if (hasOpened) return;
+  hasOpened = true;
+
+  scene.classList.add('opened');
+
+  // کارت پس از باز شدن پاکت به‌آرامی نمایان می‌شود.
+  setTimeout(() => {
+    invitation.classList.add('visible');
+
+    setTimeout(() => {
+      invitation.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 150);
+  }, 900);
+});
+
+document.getElementById('topButton').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+document.getElementById('shareButton').addEventListener('click', async () => {
+  const shareData = {
+    title: 'دعوت‌نامه عروسی حمید و سحر',
+    text: 'با عشق دعوتید به جشن پیوند حمید و سحر 🤍',
+    url: window.location.href
+  };
+
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(window.location.href);
+      alert('لینک دعوت‌نامه کپی شد؛ برای عزیزانت بفرست 🤍');
+    } else {
+      prompt('لینک سایت را کپی کن:', window.location.href);
+    }
+  } catch (error) {
+    if (error.name !== 'AbortError') {
+      prompt('لینک سایت را کپی کن:', window.location.href);
+    }
+  }
+});
+
+// ذرات طلایی شناور
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let width, height, particles = [];
+let particleFrame;
+
+function resizeCanvas() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  width = window.innerWidth;
+  height = window.innerHeight;
+
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
+  canvas.style.width = width + 'px';
+  canvas.style.height = height + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  particles = Array.from({ length: Math.min(45, Math.floor(width / 8)) }, () => ({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    r: Math.random() * 1.8 + .4,
+    speed: Math.random() * .45 + .15,
+    drift: (Math.random() - .5) * .35,
+    alpha: Math.random() * .55 + .15
+  }));
+}
+
+function drawParticles() {
+  ctx.clearRect(0, 0, width, height);
+
+  for (const p of particles) {
+    p.y -= p.speed;
+    p.x += p.drift;
+
+    if (p.y < -5) {
+      p.y = height + 5;
+      p.x = Math.random() * width;
+    }
+
+    if (p.x < -5) p.x = width + 5;
+    if (p.x > width + 5) p.x = -5;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(190, 151, 67, ${p.alpha})`;
+    ctx.fill();
+  }
+
+  particleFrame = requestAnimationFrame(drawParticles);
+}
+
+resizeCanvas();
+drawParticles();
+
+window.addEventListener('resize', resizeCanvas);
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    cancelAnimationFrame(particleFrame);
+  } else {
+    cancelAnimationFrame(particleFrame);
+    drawParticles();
+  }
+});
+</script>
+
+</body>
+</html>
